@@ -28,17 +28,25 @@ public class Main {
 			
 			numeroDecimal = numeroDecimal / baseDestino;
 		}
-		
+				
 		int tamanhoListaR = listaRestos.size();
-		for (int i = tamanhoListaR - 1; i >= 0; i--) {
-			int num = listaRestos.get(i);
-			resultadoDestino.append(num);
-		}
 		
+		for (int i = tamanhoListaR - 1; i >= 0; i--) {
+			int restoAtual = listaRestos.get(i);
+			char letra = (char) restoAtual;
+		
+			letra = (char) (restoAtual + 55);
+			
+			if (restoAtual <= 9) {
+				resultadoDestino.append(restoAtual);
+			} else {
+				resultadoDestino.append(letra);
+			}
+		}
 		return resultadoDestino;
 	}
 
 	public static void main(String[] args) {
-		System.out.println(converterDeDecimal(45, 16));
+		System.out.println(converterDeDecimal(128, 16));
 	}
 }
